@@ -23,7 +23,8 @@ public class StreamProcessorsFactory implements IStreamProcessorsFactory {
       for (String delim : delimiters) {
          int index = processorName.indexOf(delim);
          if (index != -1) {
-            tokens = processorName.substring(index + 1); 
+            tokens = processorName.substring(index);   
+            processorName = processorName.concat(tokens);
          }
       }
       return iprocessor;
